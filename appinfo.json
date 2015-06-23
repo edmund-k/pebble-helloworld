@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "pebble@edmundk.de",
+    "longName": "HelloWorld",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "HelloWorld",
+    "uuid": "5a1f0d6f-67c4-465a-95a6-dd40af20d447",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
