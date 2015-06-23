@@ -1,7 +1,7 @@
 {
     "appKeys": {},
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "pebble@edmundk.de",
     "longName": "HelloWorld",
@@ -11,6 +11,10 @@
     },
     "sdkVersion": "3",
     "shortName": "HelloWorld",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "5a1f0d6f-67c4-465a-95a6-dd40af20d447",
     "versionLabel": "1.0",
     "watchapp": {
