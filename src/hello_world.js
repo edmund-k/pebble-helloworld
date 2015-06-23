@@ -4,7 +4,7 @@ Pebble.addEventListener('ready', function(e) {
 
 Pebble.addEventListener('showConfiguration', function(e) {
   // Show config page
-  Pebble.openURL('https://rawgit.com/edmund-k/pebble-helloworld/master/hello_world_config.html');
+  Pebble.openURL('data:text/html;charset=utf-8;base64,PGh0bWw+CjxoZWFkPjwvaGVhZD4KPGJvZHk+CkknbSBhbiBvZmZsaW5lIFBlYmJsZSBjb25maWd1cmF0aW9uIHBhZ2UhCjwvYm9keT4KPC9odG1sPg==');
   console.log('Configuration window opened.');
 });
 
