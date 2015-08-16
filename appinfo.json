@@ -1,5 +1,7 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_INPUT": 0
+    },
     "capabilities": [
         "configurable"
     ],
