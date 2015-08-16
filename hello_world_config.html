@@ -4,7 +4,32 @@
 Hi, I'm an offline Pebble configuration page!<br>
 <label for='input'>Input:</label>
 <textarea cols='40' rows='1' name='input' id='input'></textarea><br>
-<button type='submit' id='cancel'>Cancel</button>
-<button type='submit' id='submit'>Submit</button>
+<button type='submit' id='b-cancel'>Cancel</button>
+<button type='submit' id='b-submit'>Submit</button>
+   <script>
+      function saveOptions() {
+        var options = {
+          'input': $("#input").val()
+        }
+        return options;
+      }
+
+      $().ready(function() {
+        $("#b-cancel").click(function() {
+          console.log("Cancel");
+          document.location = "pebblejs://close";
+        });
+
+        $("#b-submit").click(function() {
+          console.log("Submit");
+
+          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+          console.log("Warping to: " + location);
+          console.log(location);
+          document.location = location;
+        });
+
+      });
+    </script>
 </body>
 </html>
