@@ -7,18 +7,12 @@
 <script>
 	//Setup to allow easy adding more options later
 	function saveOptions() {
-		var input = document.getElementById('input');
-		var options = {
-			'input': input.value
+		return {
+			input : document.getElementById('input').value
 		}
-		return options;
 	};
-
-	var submitButton = document.getElementById('save_button');
-	submitButton.addEventListener('click', function() {
-		var options = saveOptions();
-		var location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
-		document.location = location;
+	document.getElementById('save_button').addEventListener('click', function() {
+		document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(saveOptions()));
 	}, false);
 </script>
 </body>
