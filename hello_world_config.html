@@ -3,35 +3,27 @@
 <body>
 <p>Hi, I'm an online Pebble configuration page!</p>
 <p>
-<label for='input'>Input:</label>
-<textarea cols='40' rows='1' name='input' id='input'></textarea>
+<textarea cols='40' rows='1' id='input'></textarea>
 </p>
 <p>
-<button id="save_button">Set as new target</button>
+<button id="save_button">Set as new location</button>
 </p>
 <script>
 	//Setup to allow easy adding more options later
 	function saveOptions() {
-		var input = document.getElementById("input");
-
+		var input = document.getElementById('input');
 		var options = {
-		  "input": input.value
+			'input': input.value
 		}
-		 
 		return options;
 	};
 
-	var submitButton = document.getElementById("save_button");
-	submitButton.addEventListener("click", 
-		function() {
-		  console.log("Submit");
-
-		  var options = saveOptions();
-		  var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
-		   
-		  document.location = location;
-		}, 
-		false);
+	var submitButton = document.getElementById('save_button');
+	submitButton.addEventListener('click', function() {
+		var options = saveOptions();
+		var location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
+		document.location = location;
+	}, false);
 </script>
 </body>
 </html>
