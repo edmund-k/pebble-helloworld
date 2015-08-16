@@ -1,44 +1,37 @@
 <html>
-<head>
-	<title>SDKTut9 Configuration</title>
-</head>
-  <body>
-    <h1>Pebble Config Tutorial</h1>
-    <p>Choose watchapp settings</p>
- 
-    <p>Invert watchapp:
-    <select id="invert_select">
-      <option value="off">Off</option>
-      <option value="on">On</option>
-    </select>
-    </p>
- 
-    <p>
-    <button id="save_button">Save</button>
-    </p>
-	<script>
-	  //Setup to allow easy adding more options later
-	  function saveOptions() {
-		var invertSelect = document.getElementById("invert_select");
-	 
+<head></head>
+<body>
+<p>Hi, I'm an online Pebble configuration page!</p>
+<p>
+Input:
+<textarea cols='40' rows='1' id='input'></textarea>
+</p>
+<p>
+<button id="save_button">Save</button>
+</p>
+<script>
+	//Setup to allow easy adding more options later
+	function saveOptions() {
+		var input = document.getElementById("input");
+
 		var options = {
-		  "invert": invertSelect.options[invertSelect.selectedIndex].value
+		  "input": input.value
 		}
 		 
 		return options;
-	  };
-	 
-	  var submitButton = document.getElementById("save_button");
-	  submitButton.addEventListener("click", 
+	};
+
+	var submitButton = document.getElementById("save_button");
+	submitButton.addEventListener("click", 
 		function() {
 		  console.log("Submit");
-	 
+
 		  var options = saveOptions();
 		  var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
 		   
 		  document.location = location;
 		}, 
-	  false);
-	</script>
-  </body>
+		false);
+</script>
+</body>
 </html>
