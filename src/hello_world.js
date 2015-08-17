@@ -16,7 +16,7 @@ configHtml += "<p><button id='save_button'>Set as new location</button></p>";
 configHtml += "<script>";
 configHtml += "function saveOptions() {";
   configHtml += "return {";
-  configHtml += "input : document.getElementById(\"input\").value";
+    configHtml += "input : document.getElementById(\"input\").value";
   configHtml += "};";
 configHtml += "};";
 configHtml += "document.getElementById(\"save_button\").addEventListener(\"click\", function() {";
@@ -32,21 +32,9 @@ Pebble.addEventListener('ready', function(e) {
 });
 
 Pebble.addEventListener('showConfiguration', function(e) {
-  // Define the string
-  //var string = 'Hello World!';
-  
-  // Encode the String
-  //var encodedString = "PGh0bWw+CjxoZWFkPjwvaGVhZD4KPGJvZHk+CkknbSBhbiBvZmZsaW5lIFBlYmJsZSBjb25maWd1cmF0aW9uIHBhZ2UhCjwvYm9keT4KPC9odG1sPg=="; 
-  var encodedString = Base64.encode(configHtml); 
-  //console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
-  
-  // Decode the String
-  //var decodedString = Base64.decode(encodedString);
-  //console.log(decodedString); // Outputs: "Hello World!"
-
   // Show config page
-  Pebble.openURL('data:text/html;charset=utf-8;base64,' + encodedString);
-  //  Pebble.openURL('https://rawgit.com/edmund-k/pebble-helloworld/master/hello_world_config.html');
+  Pebble.openURL('data:text/html;charset=utf-8;base64,' + Base64.encode(configHtml));
+  //Pebble.openURL('https://rawgit.com/edmund-k/pebble-helloworld/master/hello_world_config.html');
   console.log('Configuration window opened.');
 });
 
@@ -59,13 +47,15 @@ Pebble.addEventListener("webviewclosed", function(e) {
   console.log("Configuration window returned: " + configuration.input);
 
   //Send to Pebble, persist there
-  /*Pebble.sendAppMessage(
-    {"KEY_INPUT": configuration.input},
+  Pebble.sendAppMessage(
+    {
+      "KEY_INPUT": configuration.input
+    },
     function(e) {
       console.log("Sending settings data...");
     },
     function(e) {
       console.log("Settings feedback failed!");
     }
-  );*/
+  );
 });

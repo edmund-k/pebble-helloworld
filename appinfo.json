@@ -1,6 +1,6 @@
 {
     "appKeys": {
-        "KEY_INPUT": 0
+        "KEY_INPUT": 1
     },
     "capabilities": [
         "configurable"
